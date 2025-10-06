@@ -1,0 +1,16 @@
+h2 {
+    text-align: center;
+}
+
+.huaban{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media screen and (max-width:768px){
+    body{
+        width: 100vw;
+        height: 100vh;
+    }
+}

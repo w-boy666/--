@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首页</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='first_page.css')}}">
+</head>
+<body>
+    <img src="{{url_for('static',filename='ca2f497cebb6e7d7a8a6f248952708f6.jpeg')}}" alt="">
+    <h2>迷宫游戏</h2>
+    <p>
+        游戏规则：玩家操作皮卡丘，让皮卡丘找到小智丢掉的精灵球。<br>
+        游戏规则：w：向上移动；s：向下移动；a：向左移动；d：向右移动；r：重新开始。<br>
+    </p>
+    <form action="/game" method="post"><button type="submit">开始游戏</button></form>
+</body>
+</html>

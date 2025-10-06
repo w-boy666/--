@@ -1,0 +1,59 @@
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+img{
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+h2{
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    font-size: 50px;
+    top: -180px;
+}
+
+form{
+    position: relative;
+    z-index: 10;
+    height: 50px;
+    top: -40px;
+}
+
+button{
+    height: 100%;
+    width: 200px;
+    font-size: 20px;
+    border-radius: 20px;
+    transition: all 1s;
+}
+
+button:hover{
+    transform: scale(1.2);
+}
+
+p{
+    width: 50%;
+    position: relative;
+    z-index: 10;
+    left: 25%;
+    top: -100px;
+    font-size: 20px;
+    transition: all 1s;
+}
+
+p:hover{
+    transform: scale(1.2);
+}

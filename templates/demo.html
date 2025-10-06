@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>迷宫游戏</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='demo.css')}}">
+</head>
+<body>
+    <h2>迷宫游戏</h2>
+    <div class="huaban">
+        <canvas id="game" width="680" height="600" data-image="{{url_for('static',filename='皮卡丘.png')}}" data-image2="{{url_for('static',filename='精灵球.png')}}" data-image3="{{url_for('static',filename='beijing.png')}}"  data-image4="{{url_for('static',filename='luban.png')}}"></canvas>
+    </div>
+    <script src="{{url_for('static',filename='demo.js')}}"></script>
+</body>
+</html>
