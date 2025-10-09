@@ -8,9 +8,36 @@ h2 {
     justify-content: center;
 }
 
-@media screen and (max-width:768px){
-    body{
-        width: 100vw;
-        height: 100vh;
-    }
+.min{
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    right: 225px;
+    top: 240px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid red;
+    border-radius: 10px;
+}
+p{
+    font-size: 20px;
+    text-align: center;
+}
+
+.xiaohuolong{
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    right: 160px;
+    top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.xiaohuolong img{
+    width: 60px;
+    height: 60px;
 }

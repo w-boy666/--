@@ -15,6 +15,7 @@ const height=huaban.height;
 
 let gameover=false;
 let migong;
+let cpt_bfs;
 
 const player=new Image();
 player.src=huaban.getAttribute('data-image');
@@ -24,6 +25,7 @@ const wall=new Image();
 wall.src=huaban.getAttribute('data-image3');
 const luban=new Image();
 luban.src=huaban.getAttribute('data-image4');
+
 
 //创建迷宫这个类，里面包括迷宫的初始化设置（长宽、起点、终点、迷宫绘制的函数、角色移动的函数）
 class Migong{
@@ -165,12 +167,48 @@ class Migong{
             huaban_2d.fillText("请点击“R”按钮，继续挑战",width/2,height/2+50);
         }
     }
+
+    bfs_search(){
+        let queue=[];
+        const direction=[
+                [0,1],
+                [1,0],
+                [0,-1],
+                [-1,0]
+            ];
+        let visited=Array.from({length:this.height},()=>new Array(this.width).fill(0));
+        queue.push([this.player_x,this.player_y]);
+        visited[this.player_y][this.player_x]=1;
+        while(queue.length>0)
+        {
+            let [x,y]=queue[0];
+            if(x==this.end_x&&y==this.end_y)
+            {
+                return visited[y][x];
+            }
+            for(let i=0;i<4;i++)
+            {
+                let xx=x+direction[i][0];
+                let yy=y+direction[i][1];
+                if(xx>=1&&xx<=this.end_x&&yy>=1&&yy<=this.end_y&&visited[yy][xx]==0&&this.grid[yy][xx]==0)
+                {
+                    visited[yy][xx]=visited[y][x]+1;
+                    queue.push([xx,yy]);
+                }
+            }
+            queue.shift();
+        }
+    }
+
 }
 
 function initgame(){
+    const shuchu=document.getElementById('min_step');
     const shuzumigong_x=Math.floor(width/gezi_size);
     const shuzumigong_y=Math.floor(height/gezi_size);
     migong=new Migong(shuzumigong_x,shuzumigong_y);
+    let min_sum=migong.bfs_search();
+    shuchu.textContent=min_sum;
     gameover=false;
     donghuaxunhuan();
 }
